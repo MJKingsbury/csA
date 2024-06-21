@@ -1,5 +1,5 @@
 # Helper Functions
-from typing import List, Dict, Tuple
+from typing import List, Dict, Tuple, Callable
 from collections import Counter
 from math import sqrt
 
@@ -26,3 +26,7 @@ def add_trajectory(id: str,
         trajectories[id][round] = [coords]
     else:
         trajectories[id][round].append(coords)
+
+# Function to set the number of seconds for Trajectory Clustering
+def traj_Seconds(x: int) -> Callable[[], int]:
+    return lambda: x if x >= 3 else 3
