@@ -4,3 +4,4 @@ decomp_demos/
 src/navi-og.json
 src/.tmp.driveupload
 src/__pycache__
+*.json
