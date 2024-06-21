@@ -1,1 +1,6 @@
 .venv/
+comp_demos/
+decomp_demos/
+src/navi-og.json
+src/.tmp.driveupload
+src/__pycache__
