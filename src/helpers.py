@@ -1,5 +1,5 @@
 # Helper Functions
-from typing import List, Dict, Tuple, Callable
+from typing import List, Dict, Tuple, Callable, Set
 from collections import Counter
 from math import sqrt
 
@@ -7,13 +7,19 @@ def arr_to_dict(arr: List) -> Dict:
     return dict(Counter(arr))
 
 # Euclidean Distance Between Two 3D Points
-def calculate_distance(coords1: Tuple[float, float, float], 
+def euclidean_distance(coords1: Tuple[float, float, float], 
                        coords2: Tuple[float, float, float]) -> float:
     if any(v is None for v in (*coords1, *coords2)):
         return 0
     (x1, y1, z1) = coords1
     (x2, y2, z2) = coords2
     return sqrt((x2 - x1) ** 2 + (y2 - y1) ** 2 + (z2 - z1) ** 2)
+
+# Calculates the similarity of two sets by comparing their union and intersection
+def jaccard_distance(x: Set, y: Set) -> float:
+    union = x.union(y)
+    intersect = x.intersection(y)
+    return (len(union) - len(intersect)) / len(union)
 
 # Add an x, y, z coordinates tuple to the current round's list of positions for each player
 def add_trajectory(id: str, 
