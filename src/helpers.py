@@ -20,11 +20,7 @@ def hamming_distance(list1: List, list2: List) -> int:
     assert len(list1) == len(list2), "Lists must have the same length"
     return sum(el1 != el2 for el1, el2 in zip(list1, list2))
 
-# Hamming Similarity of Two Arrays
-def hamming_similarity(list1: List, list2: List) -> float:
-    return 1 - (hamming_distance(list1, list2) / len(list1))
-
-# Calculates the similarity of Two Sets by comparing their union and intersection
+# Calculates the distance between Two Sets by comparing their union and intersection
 def jaccard_distance(x: Set, y: Set) -> float:
     union = x.union(y)
     intersect = x.intersection(y)
