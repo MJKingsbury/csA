@@ -1,5 +1,5 @@
 # Helper Functions
-from typing import List, Dict, Tuple, Callable, Set
+from typing import List, Dict, Tuple, Set
 from collections import Counter
 from math import sqrt
 
